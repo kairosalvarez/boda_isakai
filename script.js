@@ -20,7 +20,6 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* animación al entrar en pantalla */
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {
@@ -30,7 +29,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.2
+  threshold: 0.15
 });
 
 reveals.forEach((section) => observer.observe(section));
