@@ -1,1 +1,95 @@
+/* PALETA */
+:root {
+  --azul-oscuro: #1F2433;
+  --azul: #3C4A6B;
+  --vino: #7A1F1F;
+  --verde: #7D8274;
+  --crema: #EDEBE6;
+}
 
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--crema);
+  color: var(--azul-oscuro);
+  text-align: center;
+}
+
+/* TÍTULOS */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* SECCIONES */
+section {
+  padding: 60px 25px;
+}
+
+/* PORTADA */
+.hero {
+  background: linear-gradient(180deg, var(--azul-oscuro), var(--azul));
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  letter-spacing: 2px;
+}
+
+.sub {
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+/* CONTADOR */
+.countdown {
+  background: white;
+}
+
+/* DETALLES */
+.details {
+  background: var(--vino);
+  color: white;
+}
+
+/* UBICACIÓN */
+.map {
+  background: var(--azul);
+  color: white;
+}
+
+/* RSVP */
+.rsvp {
+  background: white;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  background: var(--vino);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #5c1616;
+}
+
+/* REGALOS */
+.gifts {
+  background: var(--verde);
+  color: white;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--azul-oscuro);
+  color: var(--crema);
+  font-size: 0.9em;
+}
