@@ -5,7 +5,10 @@
   --verde-oliva: #7D8274;
   --marfil: #EDEBE6;
   --blanco: #FFFFFF;
-  --texto-suave: rgba(255,255,255,0.92);
+  --texto-suave: rgba(255, 255, 255, 0.95);
+  --borde: rgba(255, 255, 255, 0.18);
+  --fondo-caja: rgba(12, 16, 24, 0.42);
+  --sombra: rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -23,6 +26,7 @@ body {
   color: var(--blanco);
 }
 
+/* Secciones */
 .panel {
   position: relative;
   min-height: 100vh;
@@ -30,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 18px;
+  padding: 20px 14px;
   overflow: hidden;
   text-align: center;
   background-size: cover;
@@ -38,7 +42,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Capa de transparencia para que el texto se vea */
 .panel::before {
   content: "";
   position: absolute;
@@ -46,108 +49,118 @@ body {
   z-index: 1;
 }
 
-/* Fondos por sección */
+/* Fondos */
 .hero {
-  background-image: url("assets/Boda 1.jpg");
+  background-image: url("./assets/Boda 1.jpg");
 }
 
 .hero::before {
   background:
-    linear-gradient(rgba(18, 22, 34, 0.62), rgba(18, 22, 34, 0.72)),
-    linear-gradient(rgba(60, 74, 107, 0.22), rgba(60, 74, 107, 0.22));
+    linear-gradient(rgba(12, 16, 24, 0.64), rgba(12, 16, 24, 0.78)),
+    linear-gradient(rgba(60, 74, 107, 0.16), rgba(60, 74, 107, 0.16));
 }
 
 .countdown {
-  background-image: url("assets/Boda 2.jpg");
+  background-image: url("./assets/Boda 2.jpg");
 }
 
 .countdown::before {
   background:
-    linear-gradient(rgba(20, 24, 36, 0.64), rgba(20, 24, 36, 0.74)),
-    linear-gradient(rgba(122, 31, 31, 0.18), rgba(122, 31, 31, 0.18));
+    linear-gradient(rgba(12, 16, 24, 0.66), rgba(12, 16, 24, 0.80)),
+    linear-gradient(rgba(122, 31, 31, 0.14), rgba(122, 31, 31, 0.14));
 }
 
 .details {
-  background-image: url("assets/Boda 3.jpg");
+  background-image: url("./assets/Boda 3.jpg");
 }
 
 .details::before {
   background:
-    linear-gradient(rgba(25, 18, 22, 0.66), rgba(25, 18, 22, 0.76)),
-    linear-gradient(rgba(122, 31, 31, 0.22), rgba(122, 31, 31, 0.22));
+    linear-gradient(rgba(16, 12, 18, 0.68), rgba(16, 12, 18, 0.82)),
+    linear-gradient(rgba(122, 31, 31, 0.18), rgba(122, 31, 31, 0.18));
 }
 
 .map {
-  background-image: url("assets/Boda 4.jpg");
+  background-image: url("./assets/Boda 4.jpg");
 }
 
 .map::before {
   background:
-    linear-gradient(rgba(22, 28, 24, 0.66), rgba(22, 28, 24, 0.76)),
-    linear-gradient(rgba(125, 130, 116, 0.20), rgba(125, 130, 116, 0.20));
+    linear-gradient(rgba(14, 18, 16, 0.68), rgba(14, 18, 16, 0.82)),
+    linear-gradient(rgba(125, 130, 116, 0.16), rgba(125, 130, 116, 0.16));
 }
 
 .rsvp {
-  background-image: url("assets/Boda 5.jpg");
+  background-image: url("./assets/Boda 5.jpg");
 }
 
 .rsvp::before {
   background:
-    linear-gradient(rgba(20, 24, 36, 0.68), rgba(20, 24, 36, 0.78)),
-    linear-gradient(rgba(60, 74, 107, 0.20), rgba(60, 74, 107, 0.20));
+    linear-gradient(rgba(12, 16, 24, 0.68), rgba(12, 16, 24, 0.82)),
+    linear-gradient(rgba(60, 74, 107, 0.18), rgba(60, 74, 107, 0.18));
 }
 
 .gifts {
-  background-image: url("assets/Boda 6.jpg");
+  background-image: url("./assets/Boda 6.jpg");
 }
 
 .gifts::before {
   background:
-    linear-gradient(rgba(24, 20, 26, 0.68), rgba(24, 20, 26, 0.78)),
-    linear-gradient(rgba(122, 31, 31, 0.20), rgba(122, 31, 31, 0.20));
+    linear-gradient(rgba(16, 12, 18, 0.68), rgba(16, 12, 18, 0.82)),
+    linear-gradient(rgba(122, 31, 31, 0.18), rgba(122, 31, 31, 0.18));
 }
 
 .footer {
-  background-image: url("assets/Boda 7.jpg");
+  background-image: url("./assets/Boda 7.jpg");
 }
 
 .footer::before {
   background:
-    linear-gradient(rgba(16, 20, 30, 0.72), rgba(16, 20, 30, 0.82)),
-    linear-gradient(rgba(31, 36, 51, 0.22), rgba(31, 36, 51, 0.22));
+    linear-gradient(rgba(10, 14, 22, 0.72), rgba(10, 14, 22, 0.86)),
+    linear-gradient(rgba(31, 36, 51, 0.16), rgba(31, 36, 51, 0.16));
 }
 
-.content.full-screen-content {
+/* Caja central */
+.content-box {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 950px;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 82px 24px;
+  width: min(100%, 520px);
+  padding: 34px 20px;
+  border-radius: 28px;
+  background: var(--fondo-caja);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--borde);
+  box-shadow: 0 18px 40px var(--sombra);
 }
 
+.content-box-wide {
+  width: min(100%, 760px);
+}
+
+/* Tipografía */
 .eyebrow {
   display: inline-block;
   margin-bottom: 14px;
-  font-size: 0.82rem;
-  letter-spacing: 0.24em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--marfil);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Playfair Display', serif;
 }
 
 h1 {
-  margin: 0 0 16px;
-  font-size: clamp(3rem, 10vw, 5.2rem);
-  line-height: 1.05;
-  text-shadow: 0 4px 18px rgba(0,0,0,0.30);
+  margin: 0 0 14px;
+  font-size: clamp(2.8rem, 11vw, 4.6rem);
+  line-height: 1.03;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
 }
 
 h1 span {
@@ -155,27 +168,27 @@ h1 span {
 }
 
 h2 {
-  margin: 0 0 18px;
-  font-size: clamp(2rem, 7vw, 3.4rem);
-  line-height: 1.12;
-  text-shadow: 0 4px 18px rgba(0,0,0,0.28);
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1.1;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: var(--blanco);
 }
 
 .sub,
 .section-text,
 .timer,
 .detail-box p {
-  max-width: 760px;
   margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.8;
+  font-size: 1.12rem;
+  line-height: 1.75;
   color: var(--texto-suave);
-  text-shadow: 0 2px 10px rgba(0,0,0,0.24);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
 }
 
 .sub {
@@ -183,8 +196,8 @@ h3 {
 }
 
 .timer {
-  margin-top: 10px;
-  font-size: 1.7rem;
+  margin-top: 8px;
+  font-size: clamp(1.7rem, 7vw, 2.3rem);
   font-weight: 600;
   color: var(--blanco);
 }
@@ -193,18 +206,19 @@ h3 {
   margin-top: 18px;
 }
 
+/* Botones */
 .btn {
   display: inline-block;
-  margin-top: 26px;
-  padding: 15px 30px;
+  margin-top: 24px;
+  padding: 16px 30px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   color: var(--azul-oscuro);
   background: var(--marfil);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
 }
 
 .btn:hover {
@@ -215,36 +229,41 @@ h3 {
 .secondary-btn {
   background: transparent;
   color: var(--marfil);
-  border: 1px solid rgba(255,255,255,0.42);
+  border: 1px solid rgba(255, 255, 255, 0.42);
   box-shadow: none;
 }
 
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Detalles */
 .details-grid {
-  margin-top: 28px;
-  width: 100%;
-  max-width: 980px;
+  margin-top: 26px;
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .detail-box {
-  padding: 24px 20px;
-  border-radius: 24px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  padding: 22px 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 .detail-icon {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
+/* Animación */
 .reveal {
   opacity: 0;
-  transform: translateY(45px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateY(38px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
 }
 
 .reveal.active {
@@ -252,12 +271,29 @@ h3 {
   transform: translateY(0);
 }
 
+/* Tablet y desktop */
 @media (min-width: 768px) {
-  .content.full-screen-content {
-    padding: 90px 56px;
+  .panel {
+    padding: 28px 20px;
+  }
+
+  .content-box {
+    width: min(100%, 620px);
+    padding: 42px 34px;
+  }
+
+  .content-box-wide {
+    width: min(100%, 980px);
   }
 
   .details-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sub,
+  .section-text,
+  .timer,
+  .detail-box p {
+    font-size: 1.08rem;
   }
 }
