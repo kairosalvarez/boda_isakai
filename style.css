@@ -8,7 +8,6 @@
   --texto-suave: rgba(255, 255, 255, 0.95);
   --borde: rgba(255, 255, 255, 0.18);
   --fondo-caja: rgba(10, 14, 22, 0.44);
-  --fondo-caja-fuerte: rgba(10, 14, 22, 0.56);
   --sombra: rgba(0, 0, 0, 0.30);
 }
 
@@ -55,8 +54,8 @@ body {
 
 .hero::before {
   background:
-    linear-gradient(rgba(12, 16, 24, 0.66), rgba(12, 16, 24, 0.80)),
-    linear-gradient(rgba(60, 74, 107, 0.14), rgba(60, 74, 107, 0.14));
+    linear-gradient(rgba(12, 16, 24, 0.68), rgba(12, 16, 24, 0.82)),
+    linear-gradient(rgba(60, 74, 107, 0.12), rgba(60, 74, 107, 0.12));
 }
 
 .countdown {
@@ -119,31 +118,59 @@ body {
     linear-gradient(rgba(31, 36, 51, 0.14), rgba(31, 36, 51, 0.14));
 }
 
-/* cajas */
+/* HERO SIN CUADRO */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100svh;
+  padding: 28px 18px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-top,
+.hero-middle,
+.hero-bottom {
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  margin-top: 6px;
+}
+
+/* CAJAS RESTANTES */
 .content-box {
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 94vw;
   border-radius: 28px;
   border: 1px solid var(--borde);
   box-shadow: 0 18px 40px var(--sombra);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-.hero-box {
-  max-width: 96vw;
-  padding: 28px 16px 30px;
-  background: rgba(10, 14, 22, 0.34);
-}
-
-.section-box {
-  max-width: 94vw;
-  padding: 28px 18px;
   background: var(--fondo-caja);
+  padding: 28px 18px;
 }
 
-/* tipografías */
+/* TIPOGRAFÍAS */
 .eyebrow {
   display: block;
   width: 100%;
@@ -163,11 +190,11 @@ h3 {
 }
 
 h1 {
-  margin: 0 0 14px;
+  margin: 0;
   width: 100%;
-  font-size: clamp(3.3rem, 14vw, 6rem);
-  line-height: 0.96;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.5rem, 16vw, 7rem);
+  line-height: 0.93;
+  letter-spacing: -0.03em;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.34);
 }
 
@@ -178,7 +205,7 @@ h1 span {
 h2 {
   margin: 0 0 14px;
   width: 100%;
-  font-size: clamp(2.2rem, 9vw, 3.4rem);
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
   line-height: 1.05;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.30);
 }
@@ -200,9 +227,9 @@ h3 {
 }
 
 .hero-sub {
-  font-size: 1.08rem;
+  max-width: 720px;
+  font-size: 1.12rem;
   line-height: 1.65;
-  margin-bottom: 16px;
 }
 
 .section-text,
@@ -222,7 +249,7 @@ h3 {
   margin-top: 16px;
 }
 
-/* botones */
+/* BOTONES */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -260,7 +287,7 @@ h3 {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* detalles verticales */
+/* DETALLES */
 .details-stack {
   margin-top: 22px;
   display: flex;
@@ -297,7 +324,7 @@ h3 {
   flex: 1;
 }
 
-/* mapa */
+/* MAPA */
 .map-card {
   width: 100%;
   margin-top: 20px;
@@ -318,7 +345,7 @@ h3 {
   gap: 12px;
   background:
     linear-gradient(rgba(18, 22, 34, 0.18), rgba(18, 22, 34, 0.64)),
-    url("https://maps.googleapis.com/maps/api/staticmap?center=9.242619,-75.816321&zoom=15&size=800x400&scale=2&maptype=roadmap&markers=color:red%7C9.242619,-75.816321");
+    linear-gradient(135deg, rgba(60,74,107,0.55), rgba(31,36,51,0.75));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -352,7 +379,7 @@ h3 {
   opacity: 0.92;
 }
 
-/* formulario */
+/* FORMULARIO */
 .rsvp-form {
   width: 100%;
   margin-top: 22px;
@@ -380,7 +407,7 @@ h3 {
   color: rgba(255,255,255,0.72);
 }
 
-/* animación */
+/* ANIMACIÓN */
 .reveal {
   opacity: 0;
   transform: translateY(38px);
@@ -392,28 +419,23 @@ h3 {
   transform: translateY(0);
 }
 
-/* tablet y desktop */
+/* TABLET Y DESKTOP */
 @media (min-width: 768px) {
   .panel {
     padding: 26px 18px;
   }
 
-  .hero-box {
-    max-width: 860px;
-    padding: 42px 40px;
+  .hero-content {
+    padding: 36px 42px 42px;
   }
 
-  .section-box {
+  .content-box {
     max-width: 760px;
     padding: 38px 34px;
   }
 
-  .eyebrow {
-    font-size: 0.88rem;
-  }
-
   .hero-sub {
-    font-size: 1.12rem;
+    font-size: 1.18rem;
   }
 
   .section-text,
