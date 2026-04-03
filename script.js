@@ -55,3 +55,36 @@ if (rsvpForm) {
     window.open(whatsappURL, "_blank");
   });
 }
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let isPlaying = false;
+
+window.addEventListener("load", () => {
+  music.volume = 0.3;
+
+  const playPromise = music.play();
+
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        isPlaying = true;
+        musicBtn.innerHTML = "🔊";
+      })
+      .catch(() => {
+        isPlaying = false;
+        musicBtn.innerHTML = "🔈";
+      });
+  }
+});
+
+musicBtn.addEventListener("click", () => {
+  if (isPlaying) {
+    music.pause();
+    musicBtn.innerHTML = "🔈";
+  } else {
+    music.play();
+    musicBtn.innerHTML = "🔊";
+  }
+  isPlaying = !isPlaying;
+});
