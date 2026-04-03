@@ -2,13 +2,10 @@
   --azul-oscuro: #1F2433;
   --azul-gris: #3C4A6B;
   --vino: #7A1F1F;
-  --vino-suave: #9C3A43;
-  --rosa-vino: #B24B5A;
   --verde-oliva: #7D8274;
   --marfil: #EDEBE6;
   --blanco: #FFFFFF;
-  --gris-claro: rgba(255,255,255,0.88);
-  --sombra: rgba(0, 0, 0, 0.24);
+  --texto-suave: rgba(255,255,255,0.92);
 }
 
 * {
@@ -26,7 +23,6 @@ body {
   color: var(--blanco);
 }
 
-/* Secciones */
 .panel {
   position: relative;
   min-height: 100vh;
@@ -34,74 +30,111 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px 22px;
+  padding: 24px 18px;
   overflow: hidden;
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Fondos */
+/* Capa de transparencia para que el texto se vea */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Fondos por sección */
 .hero {
+  background-image: url("assets/Boda 1.jpg");
+}
+
+.hero::before {
   background:
-    linear-gradient(rgba(31, 36, 51, 0.66), rgba(31, 36, 51, 0.78)),
-    linear-gradient(135deg, #1F2433, #3C4A6B);
+    linear-gradient(rgba(18, 22, 34, 0.62), rgba(18, 22, 34, 0.72)),
+    linear-gradient(rgba(60, 74, 107, 0.22), rgba(60, 74, 107, 0.22));
 }
 
 .countdown {
+  background-image: url("assets/Boda 2.jpg");
+}
+
+.countdown::before {
   background:
-    linear-gradient(rgba(60, 74, 107, 0.68), rgba(31, 36, 51, 0.80)),
-    linear-gradient(135deg, #3C4A6B, #1F2433);
+    linear-gradient(rgba(20, 24, 36, 0.64), rgba(20, 24, 36, 0.74)),
+    linear-gradient(rgba(122, 31, 31, 0.18), rgba(122, 31, 31, 0.18));
 }
 
 .details {
+  background-image: url("assets/Boda 3.jpg");
+}
+
+.details::before {
   background:
-    linear-gradient(rgba(122, 31, 31, 0.68), rgba(90, 22, 34, 0.82)),
-    linear-gradient(135deg, #7A1F1F, #3C4A6B);
+    linear-gradient(rgba(25, 18, 22, 0.66), rgba(25, 18, 22, 0.76)),
+    linear-gradient(rgba(122, 31, 31, 0.22), rgba(122, 31, 31, 0.22));
 }
 
 .map {
+  background-image: url("assets/Boda 4.jpg");
+}
+
+.map::before {
   background:
-    linear-gradient(rgba(125, 130, 116, 0.72), rgba(62, 69, 55, 0.80)),
-    linear-gradient(135deg, #7D8274, #3C4A6B);
+    linear-gradient(rgba(22, 28, 24, 0.66), rgba(22, 28, 24, 0.76)),
+    linear-gradient(rgba(125, 130, 116, 0.20), rgba(125, 130, 116, 0.20));
 }
 
 .rsvp {
+  background-image: url("assets/Boda 5.jpg");
+}
+
+.rsvp::before {
   background:
-    linear-gradient(rgba(31, 36, 51, 0.72), rgba(60, 74, 107, 0.82)),
-    linear-gradient(135deg, #1F2433, #3C4A6B);
+    linear-gradient(rgba(20, 24, 36, 0.68), rgba(20, 24, 36, 0.78)),
+    linear-gradient(rgba(60, 74, 107, 0.20), rgba(60, 74, 107, 0.20));
 }
 
 .gifts {
+  background-image: url("assets/Boda 6.jpg");
+}
+
+.gifts::before {
   background:
-    linear-gradient(rgba(122, 31, 31, 0.66), rgba(60, 74, 107, 0.82)),
-    linear-gradient(135deg, #7A1F1F, #3C4A6B);
+    linear-gradient(rgba(24, 20, 26, 0.68), rgba(24, 20, 26, 0.78)),
+    linear-gradient(rgba(122, 31, 31, 0.20), rgba(122, 31, 31, 0.20));
 }
 
 .footer {
-  background:
-    linear-gradient(rgba(31, 36, 51, 0.84), rgba(22, 26, 37, 0.92)),
-    linear-gradient(135deg, #1F2433, #161a25);
+  background-image: url("assets/Boda 7.jpg");
 }
 
-/* Contenido a pantalla completa */
+.footer::before {
+  background:
+    linear-gradient(rgba(16, 20, 30, 0.72), rgba(16, 20, 30, 0.82)),
+    linear-gradient(rgba(31, 36, 51, 0.22), rgba(31, 36, 51, 0.22));
+}
+
 .content.full-screen-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   width: 100%;
-  max-width: 100%;
+  max-width: 950px;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 70px 24px;
+  padding: 82px 24px;
 }
 
-/* Textos */
 .eyebrow {
   display: inline-block;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 0.82rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--marfil);
 }
@@ -111,9 +144,10 @@ h1, h2, h3 {
 }
 
 h1 {
-  margin: 0 0 14px;
-  font-size: clamp(3rem, 9vw, 5rem);
+  margin: 0 0 16px;
+  font-size: clamp(3rem, 10vw, 5.2rem);
   line-height: 1.05;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.30);
 }
 
 h1 span {
@@ -122,12 +156,13 @@ h1 span {
 
 h2 {
   margin: 0 0 18px;
-  font-size: clamp(2.1rem, 7vw, 3.5rem);
+  font-size: clamp(2rem, 7vw, 3.4rem);
   line-height: 1.12;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.28);
 }
 
 h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 1.2rem;
 }
 
@@ -135,11 +170,12 @@ h3 {
 .section-text,
 .timer,
 .detail-box p {
-  max-width: 700px;
+  max-width: 760px;
   margin: 0;
-  line-height: 1.75;
   font-size: 1.08rem;
-  color: var(--gris-claro);
+  line-height: 1.8;
+  color: var(--texto-suave);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.24);
 }
 
 .sub {
@@ -147,9 +183,9 @@ h3 {
 }
 
 .timer {
+  margin-top: 10px;
   font-size: 1.7rem;
   font-weight: 600;
-  margin-top: 10px;
   color: var(--blanco);
 }
 
@@ -157,50 +193,47 @@ h3 {
   margin-top: 18px;
 }
 
-/* Botones */
 .btn {
   display: inline-block;
   margin-top: 26px;
-  padding: 15px 28px;
+  padding: 15px 30px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   color: var(--azul-oscuro);
   background: var(--marfil);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.24);
+  opacity: 0.96;
 }
 
 .secondary-btn {
   background: transparent;
   color: var(--marfil);
-  border: 1px solid rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.42);
   box-shadow: none;
 }
 
-/* Detalles */
 .details-grid {
-  margin-top: 30px;
+  margin-top: 28px;
+  width: 100%;
+  max-width: 980px;
   display: grid;
   gap: 18px;
-  width: 100%;
-  max-width: 850px;
 }
 
 .detail-box {
-  padding: 22px 20px;
+  padding: 24px 20px;
   border-radius: 24px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
 .detail-icon {
@@ -208,80 +241,9 @@ h3 {
   margin-bottom: 10px;
 }
 
-/* Decoración de rosas */
-.rose-decor {
-  position: absolute;
-  z-index: 1;
-  width: 180px;
-  height: 180px;
-  opacity: 0.90;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.18));
-  pointer-events: none;
-}
-
-.rose-decor::before,
-.rose-decor::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-}
-
-/* pétalos */
-.rose-decor::before {
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(122,31,31,0.95) 0 16%, transparent 17%),
-    radial-gradient(circle at 50% 30%, rgba(178,75,90,0.95) 0 18%, transparent 19%),
-    radial-gradient(circle at 68% 50%, rgba(156,58,67,0.95) 0 18%, transparent 19%),
-    radial-gradient(circle at 50% 70%, rgba(178,75,90,0.95) 0 18%, transparent 19%),
-    radial-gradient(circle at 32% 50%, rgba(156,58,67,0.95) 0 18%, transparent 19%),
-    radial-gradient(circle at 64% 34%, rgba(122,31,31,0.90) 0 15%, transparent 16%),
-    radial-gradient(circle at 36% 66%, rgba(122,31,31,0.90) 0 15%, transparent 16%),
-    radial-gradient(circle at 36% 34%, rgba(237,235,230,0.12) 0 8%, transparent 9%);
-}
-
-/* hojas */
-.rose-decor::after {
-  width: 70px;
-  height: 70px;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(125,130,116,0.95) 0 55%, transparent 56%);
-  bottom: -12px;
-  right: -10px;
-  transform: rotate(-18deg);
-  box-shadow:
-    -45px -10px 0 0 rgba(125,130,116,0.82);
-}
-
-/* posiciones */
-.top-left {
-  top: -35px;
-  left: -35px;
-  transform: rotate(-18deg);
-}
-
-.top-right {
-  top: -35px;
-  right: -35px;
-  transform: rotate(18deg);
-}
-
-.bottom-left {
-  bottom: -35px;
-  left: -35px;
-  transform: rotate(18deg);
-}
-
-.bottom-right {
-  bottom: -35px;
-  right: -35px;
-  transform: rotate(-18deg);
-}
-
-/* Animaciones */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(45px);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
@@ -290,27 +252,12 @@ h3 {
   transform: translateY(0);
 }
 
-.rose-decor {
-  animation: floatRose 5s ease-in-out infinite;
-}
-
-@keyframes floatRose {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(2deg); }
-}
-
-/* Responsive */
 @media (min-width: 768px) {
   .content.full-screen-content {
-    padding: 80px 56px;
+    padding: 90px 56px;
   }
 
   .details-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .rose-decor {
-    width: 220px;
-    height: 220px;
   }
 }
