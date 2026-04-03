@@ -6,6 +6,7 @@ body {
 
 /* SECCIONES */
 .panel {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -25,12 +26,12 @@ body {
 .gifts { background-image: url("./assets/Boda 6.jpg"); }
 .footer { background-image: url("./assets/Boda 7.jpg"); }
 
-/* OVERLAY */
+/* 🔥 OVERLAY MEJORADO (ANTES ERA MUY OSCURO) */
 .panel::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.35); /* 🔥 MÁS TRANSPARENTE */
 }
 
 .panel > * {
@@ -40,31 +41,60 @@ body {
 
 /* HERO */
 .hero-content {
-  max-width: 90%;
+  max-width: 95%;
 }
 
-/* TIPOGRAFÍA */
+/* 🔥 TIPOGRAFÍA MEJORADA */
+
+/* NOMBRE */
 h1 {
   font-size: 18vw;
   margin: 0;
+  line-height: 0.9;
 }
 
+/* FECHA */
 h2 {
   font-size: 10vw;
 }
 
+/* SUBTÍTULOS */
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
-.hero-sub,
+/* 🔥 TEXTO IMPORTANTE (AUMENTADO) */
+.hero-sub {
+  font-size: 1.5rem;  /* ANTES 1.2 */
+  line-height: 1.7;
+  margin: 20px 0;
+}
+
 .section-text {
-  font-size: 1.3rem;
+  font-size: 1.4rem; /* 🔥 GRANDE */
+  line-height: 1.7;
+}
+
+/* TEXTO DETALLES */
+.detail-row p {
+  font-size: 1.35rem;
+  line-height: 1.6;
+}
+
+/* TIMER */
+.timer {
+  font-size: 2.5rem;
+}
+
+/* ETIQUETA PEQUEÑA */
+.eyebrow {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 /* CAJAS */
 .content-box {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.45); /* MÁS TRANSPARENTE */
   padding: 25px;
   border-radius: 20px;
 }
@@ -73,32 +103,32 @@ h3 {
 .details-stack {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .detail-row {
   display: flex;
   gap: 15px;
-  background: rgba(255,255,255,0.1);
-  padding: 15px;
+  background: rgba(255,255,255,0.12);
+  padding: 18px;
   border-radius: 15px;
   text-align: left;
 }
 
 .detail-icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 /* BOTONES */
 .btn {
   display: block;
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 25px;
+  padding: 18px;
   border-radius: 50px;
   background: white;
   color: black;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .secondary-btn {
@@ -109,25 +139,25 @@ h3 {
 
 /* MAPA */
 .map-card {
-  height: 150px;
+  height: 170px;
   background: rgba(255,255,255,0.2);
   border-radius: 20px;
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .map-overlay {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 /* FORM */
 input {
   width: 100%;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 18px;
+  border-radius: 12px;
   border: none;
   margin-top: 15px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
