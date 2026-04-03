@@ -33,3 +33,23 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 reveals.forEach((section) => observer.observe(section));
+
+const rsvpForm = document.getElementById("rsvpForm");
+
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const guestName = document.getElementById("guestName").value.trim();
+
+    if (!guestName) {
+      alert("Por favor escribe tu nombre completo.");
+      return;
+    }
+
+    const message = `Hola, confirmo mi asistencia a la boda de Isabela y Kairos.%0A%0ANombre completo: ${encodeURIComponent(guestName)}`;
+    const whatsappURL = `https://wa.me/573127726119?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+}
