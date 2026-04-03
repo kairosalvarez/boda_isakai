@@ -47,8 +47,10 @@ if (rsvpForm) {
       return;
     }
 
-    const message = `Hola, confirmo mi asistencia a la boda de Isabela y Kairos.%0A%0ANombre completo: ${encodeURIComponent(guestName)}`;
-    const whatsappURL = `https://wa.me/573127726119?text=${message}`;
+    const rawMessage =
+      `Hola, confirmo mi asistencia a la boda de Isabela y Kairos.\n\nNombre completo: ${guestName}`;
+
+    const whatsappURL = `https://wa.me/573127726119?text=${encodeURIComponent(rawMessage)}`;
 
     window.open(whatsappURL, "_blank");
   });
