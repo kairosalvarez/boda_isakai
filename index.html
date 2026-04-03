@@ -5,83 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Isabela & Kairos | Nuestra Boda</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="panel hero reveal">
     <div class="hero-content">
+      <div class="hero-top">
+        <span class="eyebrow hero-eyebrow">Nuestra boda</span>
+      </div>
 
       <div class="hero-middle">
-        <span class="hero-eyebrow">Nuestra Boda</span>
-
         <h1>Isabela <span>&</span> Kairos</h1>
-
-        <p class="hero-sub">
+        <p class="sub hero-sub">
           Con alegría en el corazón, queremos compartir contigo este día tan especial.
         </p>
       </div>
 
       <div class="hero-bottom">
         <h2>23 de mayo de 2026</h2>
-        <a href="#countdown" class="btn secondary-btn">Desliza</a>
+        <a href="#countdown" class="btn secondary-btn">Desliza y descubre</a>
       </div>
-
     </div>
   </section>
 
-  <!-- CUENTA REGRESIVA -->
   <section class="panel countdown reveal" id="countdown">
     <div class="content-box">
+      <span class="eyebrow">Falta muy poco</span>
       <h2>Cuenta regresiva</h2>
       <p id="timer" class="timer"></p>
+      <p class="section-text extra-text">
+        Cada día nos acerca más a uno de los momentos más hermosos de nuestra historia.
+      </p>
     </div>
   </section>
 
-  <!-- DETALLES -->
   <section class="panel details reveal">
     <div class="content-box">
+      <span class="eyebrow">Celebremos juntos</span>
       <h2>Detalles del evento</h2>
 
       <div class="details-stack">
         <div class="detail-row">
-          <span>💍</span>
-          <div>
+          <div class="detail-icon">💍</div>
+          <div class="detail-text">
             <h3>Fecha</h3>
-            <p>23 de mayo de 2026</p>
+            <p>Sábado, 23 de mayo de 2026</p>
           </div>
         </div>
 
         <div class="detail-row">
-          <span>📍</span>
-          <div>
+          <div class="detail-icon">📍</div>
+          <div class="detail-text">
             <h3>Lugar</h3>
-            <p>Un lugar especial preparado con amor</p>
+            <p>Un espacio preparado con amor para compartir contigo este momento tan especial.</p>
           </div>
         </div>
 
         <div class="detail-row">
-          <span>✨</span>
-          <div>
+          <div class="detail-icon">✨</div>
+          <div class="detail-text">
             <h3>Celebración</h3>
-            <p>Un día lleno de amor y alegría</p>
+            <p>Viviremos un día lleno de amor, alegría, gratitud y recuerdos hermosos junto a quienes amamos.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- UBICACIÓN -->
   <section class="panel map reveal">
     <div class="content-box">
+      <span class="eyebrow">Cómo llegar</span>
       <h2>Ubicación</h2>
+      <p class="section-text">
+        Toca el mapa o el botón para abrir la ubicación exacta en Google Maps.
+      </p>
 
-      <a class="map-card" href="https://maps.app.goo.gl/Vix4HA5fFZHLPMrbA" target="_blank">
+      <a class="map-card" href="https://maps.app.goo.gl/Vix4HA5fFZHLPMrbA" target="_blank" aria-label="Abrir ubicación en Google Maps">
         <div class="map-card-overlay">
-          <p>Ver ubicación</p>
+          <div class="map-pin">📍</div>
+          <div class="map-card-text">
+            <strong>Ver ubicación</strong>
+            <span>Abrir en Google Maps</span>
+          </div>
         </div>
       </a>
 
@@ -91,40 +101,51 @@
     </div>
   </section>
 
-  <!-- RSVP -->
   <section class="panel rsvp reveal">
     <div class="content-box">
-      <h2>Confirmación</h2>
+      <span class="eyebrow">Tu presencia es importante</span>
+      <h2>Confirmación de asistencia</h2>
+      <p class="section-text">
+        Déjanos tu nombre y confirma tu asistencia. El mensaje se enviará directo por WhatsApp.
+      </p>
 
-      <form id="rsvpForm">
-        <input type="text" id="guestName" placeholder="Nombre completo" required>
-        <button type="submit" class="btn">Confirmo asistencia</button>
+      <form id="rsvpForm" class="rsvp-form">
+        <input
+          type="text"
+          id="guestName"
+          name="guestName"
+          class="input-field"
+          placeholder="Nombre completo"
+          required
+        />
+        <button type="submit" class="btn">
+          Confirmo asistencia
+        </button>
       </form>
     </div>
   </section>
 
-  <!-- REGALO -->
   <section class="panel gifts reveal">
     <div class="content-box">
-      <h2>Regalo</h2>
-      <p>Lluvia de sobres</p>
+      <span class="eyebrow">Con cariño</span>
+      <h2>Lluvia de sobres / Regalo</h2>
+      <p class="section-text">
+        Tu compañía en este día será nuestro mejor regalo. Pero si deseas tener un detalle especial con nosotros,
+        podrás hacerlo a través de lluvia de sobres.
+      </p>
     </div>
   </section>
 
-  <!-- MENSAJE -->
   <section class="panel footer reveal">
     <div class="content-box">
-      <h2>Gracias</h2>
-      <p>Gracias por acompañarnos en este día tan especial</p>
+      <span class="eyebrow">Gracias por ser parte</span>
+      <h2>Mensaje final</h2>
+      <p class="section-text">
+        Gracias por acompañarnos en esta etapa tan importante de nuestras vidas.
+        Esperamos compartir contigo una celebración llena de amor, alegría y momentos inolvidables.
+      </p>
     </div>
   </section>
-
-  <!-- AUDIO -->
-  <audio id="bgMusic" loop>
-    <source src="./assets/audio.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="musicBtn" class="music-btn">▶</button>
 
   <script src="script.js"></script>
 </body>
