@@ -1,57 +1,23 @@
-const weddingDate = new Date("2026-05-23T00:00:00").getTime();
-const timerElement = document.getElementById("timer");
+const fecha = new Date("2026-05-23").getTime();
+const timer = document.getElementById("timer");
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
+setInterval(() => {
+  const ahora = new Date().getTime();
+  const distancia = fecha - ahora;
 
-  if (distance <= 0) {
-    timerElement.innerHTML = "¡Hoy es nuestro gran día!";
-    return;
-  }
+  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((distancia / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((distancia / (1000 * 60)) % 60);
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  timer.innerHTML = `${dias} días · ${horas}h · ${minutos}m`;
+}, 1000);
 
-  timerElement.innerHTML = `${days} días · ${hours} horas · ${minutes} min`;
-}
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  const nombre = document.getElementById("nombre").value;
 
-const reveals = document.querySelectorAll(".reveal");
+  const mensaje = `Hola, confirmo mi asistencia a la boda de Isabela y Kairos. Nombre: ${nombre}`;
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-}, {
-  threshold: 0.15
+  window.open(`https://wa.me/573127726119?text=${encodeURIComponent(mensaje)}`);
 });
-
-reveals.forEach((section) => observer.observe(section));
-
-const rsvpForm = document.getElementById("rsvpForm");
-
-if (rsvpForm) {
-  rsvpForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const guestName = document.getElementById("guestName").value.trim();
-
-    if (!guestName) {
-      alert("Por favor escribe tu nombre completo.");
-      return;
-    }
-
-    const rawMessage =
-      `Hola, confirmo mi asistencia a la boda de Isabela y Kairos.\n\nNombre completo: ${guestName}`;
-
-    const whatsappURL = `https://wa.me/573127726119?text=${encodeURIComponent(rawMessage)}`;
-
-    window.open(whatsappURL, "_blank");
-  });
-}
